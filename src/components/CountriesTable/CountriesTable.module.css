@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap');
+.heading{
+   display: flex;
+
+}
+.heading button{
+   border: none;
+   background-color: transparent;
+   outline: none;
+   cursor: pointer;
+   user-select: none;
+}
+
+.heading_name , 
+.heading_population{
+ flex: 1;
+ padding: 20px;
+ color: var(--text-color-secondary);
+ font-weight: 500;
+
+ transition: .2s;
+}
+
+.heading_name{
+   text-align: left;
+}
+
+.row:hover{
+   transform: translateY(-4px);
+   box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+   /* translate: translate; */
+}
+
+.row{
+   display: flex;
+   padding: 20px;
+
+   text-align: center;
+   background-color: var(--background-color-light);
+   border-radius: 8px;
+   margin-bottom: 16px;
+
+   box-shadow: var(--box-shadow);
+   font-weight: 500;
+}
+
+.name{
+   flex: 1;
+   text-align: left;
+}
+.population {
+   flex:1;
+}
