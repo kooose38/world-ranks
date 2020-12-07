@@ -19,10 +19,23 @@
  font-weight: 500;
 
  transition: .2s;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.heading_arrow{
+   color:var(--primary-color);
+
+   display: flex;
+   justify-content: center;
+   align-content: center;
+
+   margin-left: 2px;
 }
 
 .heading_name{
-   text-align: left;
+   justify-content: flex-start;
 }
 
 .row:hover{
