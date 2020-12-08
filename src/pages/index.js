@@ -19,7 +19,7 @@ export default function Home({ countries }) {
     setKeyword(e.target.value.toLowerCase())
   }
 
-  console.log(countries[0]);
+  console.log(filterCountries);
 
 
   return (

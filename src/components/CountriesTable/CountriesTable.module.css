@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap');
 .heading{
    display: flex;
+   padding: 20px;
 
 }
 .heading button{
@@ -10,11 +11,17 @@
    cursor: pointer;
    user-select: none;
 }
+.heading_flag{
+   flex: 1;
+   margin-right: 8px;
+}
 
 .heading_name , 
-.heading_population{
- flex: 1;
- padding: 20px;
+.heading_population,
+.heading_area,
+.heading_gini{
+ flex: 4;
+ 
  color: var(--text-color-secondary);
  font-weight: 500;
 
@@ -58,9 +65,38 @@
 }
 
 .name{
-   flex: 1;
+   flex: 4;
    text-align: left;
 }
 .population {
-   flex:1;
+   flex:4;
+}
+.area{
+   flex: 4;
+}
+.gini{
+   flex: 4;
+}
+.flag{
+   margin-right: 16px;
+   flex: 1;
+}
+.flag img{
+   border-radius: 2px;
+   width: 100%;
+}
+
+@media screen and (max-width:720px){
+
+   
+   .area,.heading_area{
+      display: none;
+   }
+   .gini,.heading_gini{
+      display: none;
+   }
+   .flag,.heading_flag{
+      display: none;
+   }
+   
 }
