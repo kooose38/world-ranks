@@ -36,7 +36,7 @@ const SortArrow = (props) => {
    }
 }
 
-//  component  main
+//  component  
 const CountriesTable = ({ countries }) => {  //countries === 250xobjects
    const [direction, setDirection] = useState();   //  desc  arc  null
    const [value, setValue] = useState();  //  name  or  population
@@ -96,7 +96,7 @@ const CountriesTable = ({ countries }) => {  //countries === 250xobjects
          </div>
 
          {ordererCountries.map(country =>
-            <Link href={`/country/${country.alpha3Code}`}>
+            <Link href={`/country/${country.alpha3Code}`} key={country.name}>
                <div className={styles.row}>
                   <div className={styles.flag}>
                      <img src={country.flag} alt={country.name} />

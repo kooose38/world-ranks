@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../../components/Layout/Layout"
 import styles from "./Country.module.css";
+//自国のAPI ＝＞　レンダリング　＝＞　隣国のAPI
 
 const getCountry = async (id) => {
    const url = `https://restcountries.eu/rest/v2/alpha/${id}`
@@ -10,23 +11,24 @@ const getCountry = async (id) => {
    return country;
 }
 
+
 const Country = ({ country }) => {
-
    const [borders, setBorders] = useState([]);
-
+   //隣接国がある分だけ　APIに、fetch
    const getBorders = async () => {
       const borders = await Promise.all(
          country.borders.map(border => getCountry(border))
       );
-
-      setBorders(borders)
-   }
+      setBorders(borders)    //[{},{}]
+   };
 
    useEffect(() => {
       getBorders()
-   }, [])
+   }, []);
 
    console.log(borders);
+   console.log(country.borders);
+
    return (
       <Layout title={country.name}>
          <div className={styles.container}>
@@ -134,9 +136,8 @@ const Country = ({ country }) => {
 export default Country;
 
 // render   server  from  fetch
-// id === country.alpha3Code
+// prams.id === path.id
 export const getServerSideProps = async ({ params }) => {
-
    const country = await getCountry(params.id);
    return {
       props: {

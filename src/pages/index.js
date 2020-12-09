@@ -24,9 +24,16 @@ export default function Home({ countries }) {
 
   return (
     <Layout>
-      <div className={styles.counts}>Found {countries.length} countries</div>
+      <div className={styles.inputContainer}>
+        <div className={styles.counts}>Found {countries.length} countries</div>
 
-      <SearchInput placeholder="Fliter by Name, Region or SubRegion" onChange={onInputChange} />
+        <div className={styles.input}>
+          <SearchInput placeholder="Fliter by Name, Region or SubRegion" onChange={onInputChange} />
+
+        </div>
+
+
+      </div>
 
       <CountriesTable countries={filterCountries} />
     </Layout>
